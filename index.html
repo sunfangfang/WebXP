@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="css/reset_s.css">
+<link href="css/webxp.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+$(function(){
+	NavH();
+});
+$(window).resize(function() {
+	NavH();
+});
+function NavH() {
+	var H=$(window).height();
+	var NH = parseInt(H) -0;
+	$("#nav").css("height", NH);
+}
+</script>
+<script type="text/javascript">
+$(function(){
+	ConW();
+});
+$(window).resize(function() {
+	ConW();
+});
+function ConW() {
+	var nav=$("#nav");
+	var s;
+	if(nav.is(".nav2")){
+		s=70;
+	}
+	else{
+		s=200;
+	}
+	var W=$(window).width();
+	var CW = parseInt(W) -s;
+	$(".con").css("width", CW);
+}
+</script>
+<script type="text/javascript">
+$(function(){
+	IfaH();
+});
+$(window).resize(function() {
+	IfaH();
+});
+function IfaH() {
+	var IH=$(window).height();
+	var IfH = parseInt(IH) -0;
+	$("#if_con").css("height", IfH);
+}
+</script>
+<script type="text/javascript">
+
+
+
+
+$(function(){
+	$("#n_arw").click(function(){
+        $(this).toggleClass('show_btn');
+		$(".arw1").toggleClass('arw2');
+        var nav=$("#nav");
+		nav.toggleClass('nav2');
+		var con_widths=$(".con");
+		var con_width=$(".con").width();
+		if(nav.is(".nav2")){
+			 con_widths.animate({"width":con_width+130});
+			 var W=$(window).width();
+	         var CW = parseInt(W) -70;
+	         $(".con").css("width", CW);
+		}
+		else{
+			 con_widths.animate({"width":con_width-130});
+			   var W=$(window).width();
+	          var CW = parseInt(W) -70;
+	         $(".con").css("width", CW);
+		}
+		$("#top_name").toggleClass('top_name2');
+		$("#top_name span").toggle();
+		$("#logo").toggleClass('logo2');
+		$("#logo").children().last('img').toggle();
+		$("#nav_list,#nav_list2").toggleClass('nav_list2');
+		$(".nlist_a span,.nlist_b span").toggle();
+		});
+	});
+</script>
+<script type="text/javascript"><!--控制左侧宽度 -->
+$(function(){
+	/*$("#n_arw").click(function(){
+		$(this).toggleClass('show_btn');
+		$(".arw1").toggleClass('arw2');
+		var aa=$(".hide_btn span");
+		var dd=$(".con").width();
+		if(aa.is(":visible")){
+		    $(".con").animate({"width":dd-130+"px"},500);
+
+		}
+		else{
+			$(".con").animate({"width":dd+130+"px"},500);
+		    var W2=$(window).width();
+			var CW2 = parseInt(W2) -58;
+			$(".con").css("width", CW2);
+		}
+		$(window).load(function(){
+			ConW2();
+		});
+		$(window).resize(function() {
+			ConW2();
+		});
+		function ConW2() {
+			var W2=$(window).width();
+			var CW2 = parseInt(W2) -58;
+			$(".con").css("width", CW2);
+		}
+		});*/
+
+});
+</script>
+
+
+<!-- aToolTip css -->
+<link type="text/css" rel="stylesheet" href="css/atooltip.css"/>
+<!-- aToolTip js -->
+<script type="text/javascript" src="js/jquery.atooltip.min.js"></script>
+<script type="text/javascript">
+    $(function(){ 
+        $('a.normalTip').aToolTip();
+       
+    }); 
+</script>
+</head>
+
+<body>
+<!--左侧导航 -->
+<div class="nav" id="nav">
+	<div class="top_name" id="top_name"><img src="img/tt.jpg"><span>金夫人婚纱摄影</span></div>
+    <div class="logo" id="logo"><img src="img/logo01.png"><img src="img/logo02.png"><div class="login_name">登录人：<span>小小</span></div></div>
+    <ul class="nav_list" style="margin-top:20px;" id="nav_list">
+		<li><a href="home.html" target="I2" class="nlist_a normalTip" id="col11" title="首页"><strong class="col11"><small></small></strong><span>首页</span></a></li>
+    	<li><a href="hckh.html" target="I2" class="nlist_a normalTip" id="col01" title="缓存客户"><strong class="col01"><small></small></strong><span>缓存客户</span></a></li>
+    	<li><a href="XPD.html"target="_blank" class="nlist_a normalTip" id="col02" title="选片/看设计"><strong class="col02"><small></small></strong><span>选片/看设计</span></a></li>
+    	<li><a href="TPGL.html" target="I2" class="nlist_a normalTip" id="col03" title="图片管理"><strong class="col03"><small></small></strong><span>图片管理</span></a></li>
+    	<li><a href="#" class="nlist_a normalTip" id="col04" title="档案清理"><strong class="col04"><small></small></strong><span>档案清理</span></a></li>
+    </ul>
+    <ul class="nav_list" style="margin-top:60px;" id="nav_list2">
+    	<li><a href="#" class="nlist_a normalTip" id="col05" title="操作日志"><strong class="col05"><small></small></strong><span>操作日志</span></a></li>
+    	<li><a href="#" class="nlist_a normalTip" id="col06" title="修改密码"><strong class="col06"><small></small></strong><span>修改密码</span></a></li>
+    	<li><a href="SD.html" target="I2" class="nlist_a normalTip" id="col07" title="设定"><strong class="col07"><small></small></strong><span>设定</span></a></li>
+		<li><a href="XP-SJ.html" target="I2" class="nlist_a normalTip" id="col09" title="个性化选片"><strong class="col09"><small></small></strong><span>个性化选片</span></a></li>
+		<li><a href="QXSD.html" target="I2" class="nlist_a normalTip" id="col10" title="角色权限"><strong class="col10"><small></small></strong><span>角色权限</span></a></li>
+		<li><a href="Setpage.html" target="I2" class="nlist_a normalTip" id="col12" title="个性化选片"><strong class="col12"><small></small></strong><span>设置</span></a></li>
+    	<li><a href="#" class="nlist_a normalTip" id="col08" title="退出"><strong class="col08"><small></small></strong><span>退出</span></a></li> 
+    </ul>
+    <a href="#" class="hide_btn normalTip" id="n_arw" title="展开菜单"><span class="arw1"></span></a>
+</div>
+<!--左侧导航 --------end-->
+<!--右侧整体 -->
+<div class="con">
+    <iframe id="if_con" name="I2" src="home.html">
+    <!--框架内容 -->
+    </iframe>
+</div>
+<!--右侧整体 --------end-->
+
+
+<script type="text/javascript">
+$(function(){
+	$("#col06").click(function(){
+		$(".mim_bg,.mcontent").show();
+		});
+	$(".mbtn,.m_close").click(function(){
+		$(".mim_bg,.mcontent").hide();
+		});
+	});
+</script>
+<div class="mim_bg"></div>
+<div class="mcontent" style="display:none">
+    <div class="mcon_title">修改密码</div>
+    <div class="mcon_text">
+        <span class="mcon_span">旧密码 :</span>
+        <input type="password" class="minput1">
+    </div>
+    <div class="mcon_text">
+        <span class="mcon_span">新密码 :</span>
+        <input type="password" class="minput1">
+    </div>
+    <div class="mcon_text">
+        <span class="mcon_span">确认密码 :</span>
+        <input type="password" class="minput1">
+    </div>
+    <button class="mbtn">确定</button>
+    <div class="m_close"><a href="javascript:void(0)">取消修改</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>熊宝贝网络选片系统</title>
+<link rel="stylesheet" type="text/css" href="css/in.css">
+<link rel="stylesheet" type="text/css" href="css/reset_s.css">
+<link rel="stylesheet" type="text/css" href="css/table.css"/>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	In4H();
+ });
+$(window).resize(function() {
+	In4H();
+});
+function In4H() {
+	var in4D=$(window).height();
+    var tt;
+    if($(window).width()<1250){
+        tt=438;
+    }else{
+        tt=390;
+    }
+	var in4DH = parseInt(in4D) -tt;
+	$(".center_tb").css("height", in4DH);
+}
+</script>
+</head>
+<body class="ind">
+<!--<div class="s-pic"><img src="img/s-pic.png"></div> -->
+<!--<div class="in-btn"><a href="hckh.html">开始使用</a></div> -->
+<div class="in3">
+	<div class="in4" style="margin-left:3%">
+    	<div class="in_day">
+            <div class="index_ser">
+                <div class="ser_div">
+                    <input type="text" placeholder="请输入编号">
+                    <i></i>
+                </div>
+            </div>
+            <div class="index_date">
+                <a href="#" class="in_arw1"></a>
+                <div class="inday">2016-02-14 </div>
+                <a href="#" class="in_arw2"></a>
+            </div>
+        </div>
+        <div class="center_tb" style="height:300px;">
+        	<table class="tb_tables" cellspacing="0" cellpadding="0">
+                 <thead>
+                    <tr class="tr_heard">
+                        <td class="td_width"></td>
+                        <td style="width: 70px;text-align: center">选片状态</td>
+                        <td>客户序号</td>
+                        <td>男士姓名</td>
+                        <td>女士姓名</td>
+                        <td>宝宝昵称</td>
+                        <td>宝宝姓名</td>
+                    </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td style="text-align: center;position: relative"><a href="javascript:void(0)"class="lock"></a><div class="index_tip">点击一下，即可“锁定”</div></td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <script>
+                       $(function(){
+                           $(".lock").hover(function(){
+                               $(this).parent().find(".index_tip").toggle();
+                           })
+                       })
+                   </script>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td style="text-align: center;position: relative"><a href="javascript:void(0)" class="lock unlock"></a><div class="index_tip">点击一下，即可“锁定”</div></td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                 </tbody>
+            </table>
+    	</div>   
+        <div class="in5">
+            <span class="tb_pag_xs"> 每页显示20条&nbsp;&nbsp;共<label>0</label>条</span>
+            <div class="in_pag">
+                 <div class="quotes quotes1">
+                     <a href="#"><span class="prev">上一页</span></a>
+                     <div class="pages">
+                         <a href="#"><span>01</span></a>
+                         <a class="sl">...</a>
+                         <a href="#"><span>06</span></a>
+                         <a href="#"><span>07</span></a>
+                         <a href="#"><span>08</span></a>
+                         <a class="sl">...</a>
+                         <a href="#"><span>13</span></a>
+                     </div>
+                     <a href="#"><span class="next">下一页</span></a>
+                 </div>
+            </div>
+            <div class="in5_btn"><a href="#" style="background-color:#4dcd70;">开始选片</a></div>
+        </div>     
+    </div>
+	<div class="in4" style="margin-left:4%">
+    	<div class="in_day">
+        	<a href="#" class="in_arw1"></a>
+            <div class="inday">2016-02-14 </div>
+            <a href="#" class="in_arw2"></a>
+        </div>
+        <div class="center_tb" style="height:300px;">
+        	<table class="tb_tables" cellspacing="0" cellpadding="0">
+                 <thead>
+                    <tr class="tr_heard">
+                        <td class="td_width"></td>
+                        <td>选片状态</td>
+                        <td>客户序号</td>
+                        <td>男士姓名</td>
+                        <td>女士姓名</td>
+                        <td>宝宝昵称</td>
+                        <td>宝宝姓名</td>
+                    </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td><a href="" title="点击一下，即可“锁定”" class="lock">锁定</a></td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                   <tr>
+                       <td class="td_width">1</td>
+                       <td class="td_blue">1800002542</td>
+                       <td>李大仁</td>
+                       <td>程又青</td>
+                       <td>小小</td>
+                       <td>李潇潇</td>
+                   </tr>
+                 </tbody>
+            </table>
+    	</div>
+        <div class="in5">
+            <span class="tb_pag_xs"> 每页显示20条&nbsp;&nbsp;共<label>0</label>条</span>
+            <div class="in_pag">
+                 <div class="quotes quotes2">
+                     <a href="#"><span class="prev">上一页</span></a>
+                     <div class="pages">
+                         <a href="#"><span>01</span></a>
+                         <a class="sl">...</a>
+                         <a href="#"><span>06</span></a>
+                         <a href="#"><span>07</span></a>
+                         <a href="#"><span>08</span></a>
+                         <a class="sl">...</a>
+                         <a href="#"><span>13</span></a>
+                     </div>
+                     <a href="#"><span class="next">下一页</span></a>
+                 </div>
+            </div>
+            <div class="in5_btn"><a href="#" style="background-color:#07b6e5;">开始看设计</a></div>
+        </div>
+    </div>
+</div>
+<div class="in-copyright">北京熊宝贝科技发展有限公司 技术支持：400-100-7592</div>
+
+<script type="text/javascript">
+/*隔行换色*/
+	$(function(){
+		$(".ta_bg tr:even").addClass("tr_styles");
+		$(".ta_bga tr:even").addClass("tr_styles");
+		$("table>tbody>tr").click(function(){
+			$(this).addClass("tr_style").siblings().removeClass("tr_style");
+		});
+        $(".quotes1 span").click(function(){
+            $(".quotes1 span").removeClass("span_check");
+            $(this).addClass("span_check");
+        });
+        $(".quotes2 span").click(function(){
+            $(".quotes2 span").removeClass("span_check");
+            $(this).addClass("span_check");
+        })
+	});
+</script>
+</body>
+</html>

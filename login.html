@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选片系统登录</title>
+    <link rel="stylesheet" href="css/reset_s.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery.1.11.1.js"></script>
+<!--    <script src="js/login.js"></script> -->
+</head>
+<script type="text/javascript">
+$(function(){
+   $(":text").focus(function(){
+       $(this).css({border:"1px solid #f78e57",boxShadow:"0 0 10px #f78e57"});
+	   $(".con_text ul").slideDown();
+   });
+    $(":text").blur(function(){
+        $(this).css({border:"1px solid #c2c2c2",boxShadow:"none"});
+		$(".con_text ul").slideUp();
+    });
+    $(":password").focus(function(){
+        $(this).css({border:"1px solid #f78e57",boxShadow:"0 0 10px #f78e57"});
+    });
+    $(":password").blur(function(){
+        $(this).css({border:"1px solid #c2c2c2",boxShadow:"none"});
+    });
+
+    $(".check_a").click(function(){
+        $(this).toggleClass('check_b');
+    });
+    $(".check_text").click(function(){
+        $(this).siblings(".check_a").toggleClass('check_b');
+    });
+});
+</script>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <img src="img/login_title.png" alt="">
+            <div class="logo"><img src="img/logo.png" alt=""></div>
+        </div>
+        <div class="con_left">
+            <img src="img/computer.png" alt="">
+        </div>
+        <div class="content">
+            <div class="con_title">欢迎来到熊宝贝选片系统</div>
+            <div class="con_text">
+                <span class="con_span">用户名 :</span>
+                <input type="text" class="input1">
+                <ul>
+                	<li>admin</li>
+                	<li>小小</li>
+                	<li>小飞侠</li>
+                </ul>
+            </div>
+            <div class="con_text">
+                <span class="con_span">密码 :</span>
+                <input type="password" class="input1">
+            </div>
+            <!--<div class="con_text">
+                <span class="con_span">照片类型 :</span>
+                <label class="login_label"><input type="checkbox"><span class="check_span check_a"></span><span class="check_text">原图片</span></label>
+                <label class="login_label"><input type="checkbox"><span class="check_span check_a"></span><span class="check_text">设计版</span></label>
+            </div>
+            <div class="con_text">
+                <span class="con_span">验证码 :</span>
+                <input type="text" class="input2" placeholder="请输入验证码">
+                <span class="yanzheng"></span>
+            </div>-->
+            <button class="btn">登录</button>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="img/footer.png" alt="">
+        <div class="copyright"><div class="copy_contain"><span class="span_aa">本系统授权：北京大兴旗舰店</span> <span class="span_bb">ERP 版本 V4.0.0.1</span></div></div>
+    </div>
+
+</body>
+</html>

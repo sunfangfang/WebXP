@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>选片-裁切</title>
+<link rel="stylesheet" type="text/css" href="css/reset_s.css">
+<link rel="stylesheet" type="text/css" href="css/xpd.css">
+<link rel="stylesheet" type="text/css" href="css/table.css">
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script src="js/xp_bz.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+	xpH();
+});
+$(window).resize(function() {
+	xpH();
+});
+function xpH() {
+	var xH=$(window).height();
+	var xcH = parseInt(xH);
+	$(".xp_con").css("height", xcH);
+}
+</script>
+<script type="text/javascript"><!--左侧高 -->
+$(window).load(function(){
+	CLH();
+});
+$(window).resize(function() {
+	CLH();
+});
+function CLH() {
+	var CxH=$(window).height();
+	var CxcH = parseInt(CxH);
+	$(".xp_cl,.xp_cr").css("height", CxcH);
+}
+</script>
+
+<script type="text/javascript">
+$(window).load(function(){
+	PicH();
+});
+$(window).resize(function() {
+	PicH();
+});
+function PicH() {
+	var pxH=$(window).height();
+	var pxcH = parseInt(pxH);
+	$(".xp_cl_pic").css("height", pxcH);
+}
+</script>
+<script type="text/javascript"><!--右侧高 -->
+$(window).load(function(){
+	CrH();
+});
+$(window).resize(function() {
+	CrH();
+});
+function CrH() {
+	var CxH=$(window).height();
+	var CcH = parseInt(CxH) -5;
+	$(".cra_div").css("height", CcH);
+}
+</script>
+<script type="text/javascript"><!--右侧内容高 -->
+$(window).load(function(){
+	CcrH();
+});
+$(window).resize(function() {
+	CcrH();
+});
+function CcrH() {
+	var CcxH=$(window).height();
+	var CccH = parseInt(CcxH) -105;
+	$(".cra_div").css("height", CccH);
+}
+</script>
+
+</head>
+<body>
+<div class="xp_con">
+	<div class="xp_cl">
+    	<div class="xp_cl_pic">
+            <div class="pic_div">
+                <div class="cl_pic"><img src="imgs/m2.jpg"></div>
+				<div class="dirl_div">
+					<a href="#" class="cl_arw"></a>
+				</div>
+				<div class="dirr_div">
+					<a href="#" class="cr_arw"></a>
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="xp_cr2">
+        <!--右 -->
+		<div class="dir">
+			<div class="c_dir">
+				<div class="c_dirline">
+					<span class="c_rightcur"></span>
+				</div>
+			</div>
+		</div>
+    		<div class="xp_cra2">
+            	<div class="xp_cq">裁切</div>
+                <div class="cra_div">
+                    <div class="cra_con2" style="padding-bottom:20px;">
+                        <div class="cra_tit_name">比例</div>
+                        <div class="cra_ts">温馨提示：双加添加!</div>
+                        <script type="text/javascript">
+						$(function(){
+							$(".cra_kuang a").click(function(){
+								$(".cra_kuang a").removeClass('kuang_act')
+								$(this).addClass('kuang_act')
+								});
+							});
+						</script>
+                        <div class="cra_kuang">
+                        	<a href="#" class="kuang_btn">1:2</a>
+                        	<a href="#" class="kuang_btn">2:3</a>
+                        	<a href="#" class="kuang_btn">3:6</a>
+                        	<a href="#" class="kuang_btn">4:6</a>
+                        	<a href="#" class="kuang_btn">6:9</a>
+                        	<a href="#" class="kuang_btn">1:1</a>
+                        </div>
+                        <div class="cra_bl"><strong>*</strong><span>比例自定义</span><input type="text"><small>:</small><input type="text"><a href="#">确定</a></div>
+                    </div>
+                    <div class="cra_con2" style="padding-bottom:40px;">
+                        <div class="cra_tit_name">标注颜色</div>
+                        <div class="cr_col">
+                            <div class="color_show"></div>
+                            <div class="show_col colb">
+                                <span class="cola"></span>
+                                <span class="colb"></span>
+                                <span class="colc"></span>
+                                <span class="cold"></span>
+                                <span class="cole"></span>
+                                <span class="colf"></span>
+                                <span class="colg"></span>
+                                <span class="colh"></span>
+                                <span class="coli"></span>
+                                <span class="colj"></span>
+                                <span class="colk"></span>
+                                <span class="coll"></span>
+                                <span class="colm"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cra_con2">
+                        <div class="cra_tit_name">效果</div>
+                        <div class="cra_tit_cz"><a href="#" class="cz_btn3a" style="margin-left:50px;">比例调转</a><a href="#" class="cz_btn3a cz_btn3b">裁切效果</a><a href="#" class="cz_btn3a">取消效果</a></div>
+                    </div>
+                    <div class="cra_con2" style="border:none;">
+                        <div class="cra_tit_name">备注</div>
+                        <div class="cra_bz" style="margin-top:20px;"><span>1</span><input type="text"><a href="#">移除</a></div>
+                        <div class="cra_bz"><span>2</span><input type="text"><a href="#">移除</a></div>
+                        <div class="cra_bz"><span>3</span><input type="text"><a href="#">移除</a></div>
+                    </div>
+                </div>
+                    <div class="car_btm">
+                        <a href="#" class="car_btn orange" style="margin-left:65px;">保存</a>
+                        <a href="#" class="car_btn gray" style="margin-left:30px;">取消</a>
+                    </div>
+            </div>
+
+        <!--右--end -->
+    </div>
+</div>
+
+<script type="text/javascript"><!--效果按钮 -->
+$(function(){
+	$(".cra_tit_cz a").click(function(){
+		$(".cra_tit_cz a").removeClass('cz_btn3b');
+		$(this).addClass('cz_btn3b');
+		});
+	});
+</script>
+<script type="text/javascript">
+/*隔行换色*/
+	$(function(){
+		$(".ta_bg tr:even").addClass("tr_styles");
+		$(".ta_bga tr:even").addClass("tr_styles");
+		$("table>tbody>tr").click(function(){
+			$(this).addClass("tr_style").siblings().removeClass("tr_style");
+		});
+	});
+</script>
+</body>
+</html>
