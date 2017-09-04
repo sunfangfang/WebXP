@@ -1,0 +1,17 @@
+/*table*/
+.td_slide{
+	width:100%;
+	overflow:auto;
+	height:210px;
+}
+.tb_tables{clear:both;width:100%;background:#fff;position:relative;top:0;overflow:auto;}
+.td_width{width:60px;border-right:1px solid #ededed;text-align:center;}
+.tr_heard{height:48px;line-height:48px;background:#f6f8fa;color:#666;font-size:12px;text-align:left;}
+.tr_heard td{border-top:1px solid #ededed;border-bottom:1px solid #ededed;}
+tbody tr td{height:48px;border-bottom:1px solid #ededed;color:#171717;font-size:12px;} 
+/*.td_colors{color:#38b7ea;}*/
+.tb_tables td:nth-child(2){padding-left:10px;}
+/*表格点击样式*/
+table .tr_style{background:#ffd1b9;}
+.tr_styles{background:#f6f8fa;}
+

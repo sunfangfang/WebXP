@@ -1,0 +1,392 @@
+@charset "utf-8";
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+/*top*/
+.top_nav {
+    clear: both;
+    float: left;
+    height: 59px;
+    width: 100%;
+    border-bottom: 1px solid #ededed;
+}
+
+.sy {
+    float: left;
+    height: 30px;
+    width: auto;
+    margin-top: 17px;
+    margin-left: 15px;
+}
+
+.sy small {
+    float: left;
+    height: 12px;
+    width: 12px;
+    border-radius: 15em;
+    margin-top: 7px;
+    background: #f36e5d;
+}
+
+.sy span {
+    font-size: 16px;
+    line-height: 20px;
+    color: #161616;
+    float: left;
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+/*main*/
+.main {
+    padding: 7px;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+.main_l {
+    width: 55%;
+    height: auto;
+    float: left;
+}
+
+.qx_block {
+    background: #fff;
+    border-bottom: 5px solid #d9d9d9;
+}
+
+.qx_title {
+    width: 100%;
+    height: auto;
+    color: #212121;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.qx_left {
+    width: 90px;
+    height: 30px;
+    border-left: 4px solid #f78e57;
+    line-height: 30px;
+    padding-left: 20px;
+    float: left;
+}
+
+.qx_title span {
+    float: left;
+}
+
+.title_cir {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #212121;
+    float: left;
+    margin: 15px 5px 0;
+}
+
+.qx_tb {
+    padding: 0 20px 10px;
+}
+
+.qx_tbcon {
+    border: 1px solid #f4f4f4;
+    overflow: auto;
+}
+
+.js_sel{
+    height: 85px;
+}
+
+.js_sel span{
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 85px;
+}
+.js_sel select{
+    width: 184px;
+    height: 32px;
+    border: 1px solid #ff8d52;
+    margin-left: 10px;
+}
+.js_lab{
+    width:100%;
+    height: 60px;
+    border-top: 1px solid #f4f4f4;
+}
+.qx_right{
+    width: 423px;
+    float: right;
+    margin-right: 20px;
+    margin-top: -10px;
+}
+.js_fl{
+    float: left;
+    margin-left: 25px;
+}
+.js_fl span{
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 30px;
+}
+.js_fl select{
+    width: 90px;
+    height: 32px;
+    border: 1px solid #d8d8d8;
+    margin-left: 8px;
+}
+.main_r {
+    width: 44%;
+    height: 100%;
+    background: #fff;
+    float: right;
+}
+.main_r>.qx_block{
+    height: 100%;
+}
+
+.right_block{
+    width: 100%;
+    height: auto;
+    border: 1px solid #f4f4f4;
+    padding: 20px;
+    overflow: auto;
+}
+.right_title{
+    font-size: 14px;
+    color: #fb5e0c;
+    margin-bottom: 20px;
+}
+
+.qx_check{
+    width: 100%;
+    height: auto;
+}
+.qx_check:before,
+.qx_check:after {
+    content: "";
+    display: block;
+}
+.qx_check:after {
+    clear: both;
+}
+
+.first_ul{
+    width: 100%;
+    height: auto;
+    background:url("../img/vertical.png") repeat-y;
+    background-position:6px -3px;
+}
+
+.first_ul li{
+    clear: both;
+    padding-top: 10px;
+    padding-top: 10px;
+    background:url("../img/vertical.png") no-repeat 6px top;
+}
+.line_x{
+    display: inline-block;
+    width: 10px;
+    height: 13px;
+    background: url("../img/level.png") no-repeat center center;
+    float: left;
+}
+.qx_img1{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    background: url("../img/folding.png") no-repeat center center;
+    float: left;
+    cursor: pointer;
+}
+.qx_img2{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    background: url("../img/unfold.png") no-repeat center center;
+    float: left;
+    cursor: pointer;
+}
+.lab_fir{
+   float: left;
+    margin-top: -3px;
+    margin-left: -3px;
+}
+.sec_ul{
+    margin-left: 25px;
+    display: none;
+    background:url("../img/vertical.png") repeat-y;
+    background-position:6px -3px;
+}
+.sec_ul li{
+    padding-top: 10px;
+    background:url("../img/vertical.png") no-repeat 6px top;
+}
+.third_ul{
+    margin-left:25px;
+    display: none;
+    background:url("../img/vertical.png") repeat-y;
+    background-position:6px -3px;
+}
+
+label>span{
+    font-size: 14px;
+    color: #212121;
+}
+
+
+/*表格*/
+table {
+    clear: both;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    top: 0;
+    overflow: auto;
+}
+
+thead {
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    color: #666;
+    font-size: 14px;
+    text-align: left;
+}
+
+thead td {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+tbody tr td {
+    height: 48px;
+    border-bottom: 1px solid #f4f4f4;
+    color: #212121;
+    font-size: 14px;
+}
+
+table td {
+    border: none;
+    padding-left: 10px;
+}
+
+td:nth-child(1) {
+    border-right: 1px solid #f4f4f4;
+}
+
+/*表格点击样式*/
+.tr_styles {
+    background: #f7f8fc;
+}
+
+.tr_style {
+    background: #ffd1b9;
+}
+
+tbody tr:hover {
+    background: #ffd1b9;
+}
+
+.tb_bottom {
+    height: 56px;
+    width: 100%;
+    background-color: #FFF;
+    clear: both;
+    border: 1px solid #f4f4f4;
+    border-top:none;
+}
+
+.tb_btn {
+    color: #fff;
+    text-align: center;
+    float: left;
+    height: auto;
+    width: auto;
+    min-width: 80px;
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 12px;
+    font-size: 14px;
+    border-radius: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tb_green {
+    background-color: #4dcd70;
+}
+
+.tb_blue {
+    background-color: #09b7e9;
+}
+
+.tb_orange {
+    background-color: #ff8849;
+}
+
+.tb_green:hover {
+    background-color: #72dda9;
+}
+
+.tb_blue:hover {
+    background-color: #399df7;
+}
+
+.tb_orange:hover {
+    background-color: #ffc773;
+}
+.tb_gray{
+    background-color: #bbb;
+}
+.tb_gray:hover{
+    background-color: #9c9c9c;
+}
+
+.tb_b_zs {
+    float: right;
+    height: 20px;
+    width: auto;
+    margin-top: 17px;
+}
+
+.tb_b_zs span {
+    font-size: 14px;
+    line-height: 20px;
+    color: #161616;
+    float: left;
+    height: 20px;
+    width: auto;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+@media screen and (max-width: 1200px) {
+    .qx_right {
+        width: 100%;
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+}
+.qx_tbcon {
+    border: 1px solid #f4f4f4;
+    overflow: auto;
+    min-height: 300px;
+}

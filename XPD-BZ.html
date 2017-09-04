@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>选片-标注</title>
+<link rel="stylesheet" type="text/css" href="css/reset_s.css">
+<link rel="stylesheet" type="text/css" href="css/table.css">
+<link rel="stylesheet" type="text/css" href="css/xpd.css">
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script src="js/xp_bz.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+	xpH();
+});
+$(window).resize(function() {
+	xpH();
+});
+function xpH() {
+	var xH=$(window).height();
+	var xcH = parseInt(xH);
+	$(".xp_con").css("height", xcH);
+}
+</script>
+<script type="text/javascript"><!--左侧高 -->
+$(window).load(function(){
+	CLH();
+});
+$(window).resize(function() {
+	CLH();
+});
+function CLH() {
+	var CxH=$(window).height();
+	var CxcH = parseInt(CxH);
+	$(".xp_cl,.xp_cr").css("height", CxcH);
+}
+</script>
+<script type="text/javascript">
+$(window).load(function(){
+	PicH();
+});
+$(window).resize(function() {
+	PicH();
+});
+function PicH() {
+	var pxH=$(window).height();
+	var pxcH = parseInt(pxH);
+	$(".xp_cl_pic").css("height", pxcH);
+}
+</script>
+<script type="text/javascript"><!--右侧高 -->
+$(window).load(function(){
+	CrH();
+});
+$(window).resize(function() {
+	CrH();
+});
+function CrH() {
+	var CxH=$(window).height();
+	var CcH = parseInt(CxH) -105;
+	$(".cra_div").css("height", CcH);
+}
+</script>
+<script type="text/javascript"><!--右侧内容高 -->
+$(window).load(function(){
+	CcrH();
+});
+$(window).resize(function() {
+	CcrH();
+});
+function CcrH() {
+	var CcxH=$(window).height();
+	var CccH = parseInt(CcxH) -115;
+	$(".cra_con").css("height", CccH);
+}
+</script>
+
+</head>
+<body>
+<div class="xp_con">
+	<div class="xp_cl">
+    	<div class="xp_cl_pic">
+            <div class="pic_div">
+                <div class="cl_pic"><img src="imgs/m2.jpg"></div>
+                <div class="dirl_div">
+                    <a href="#" class="cl_arw"></a>
+                </div>
+                <div class="dirr_div">
+                    <a href="#" class="cr_arw"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xp_cr2">
+        <div class="dir">
+            <div class="c_dir">
+                <div class="c_dirline">
+                    <span class="c_rightcur"></span>
+                </div>
+            </div>
+        </div>
+    		<div class="xp_cra2">
+                <div class="xp_cq">标注</div>
+                <div class="cra_div">
+                    <div class="cra_con2">
+                        <div class="cra_tit_name">图形形状</div>
+                        <div class="cra_tit_cz cra_tit_shape"><a href="#" class="cz_btn3a" style="margin-left:50px;">矩形</a><a href="#" class="cz_btn3a cz_btn3b">圆形</a><a href="#" class="cz_btn3a">文本</a></div>
+                    </div>
+                    <div class="cra_con2">
+                        <div class="cra_tit_name">线性宽度</div>
+                        <div class="cra_tit_cz cra_tit_lineH">
+                            <a href="#" class="cz_btn3a" style="margin-left:50px;"><span class="line_h"></span></a>
+                            <a href="#" class="cz_btn3a cz_btn3b"><span class="line_h" style="height: 3px"></span></a>
+                            <a href="#" class="cz_btn3a"><span class="line_h" style="height: 4px"></span></a>
+                            <a href="#" class="cz_btn3a"><span class="line_h" style="height: 5px"></span></a>
+                        </div>
+                    </div>
+                    <div class="cra_con2" style="padding-bottom:40px;">
+                        <div class="cra_tit_name">标注颜色</div>
+                        <div class="cr_col">
+                            <div class="color_show"></div>
+                            <div class="show_col colb">
+                                <span class="cola"></span>
+                                <span class="colb"></span>
+                                <span class="colc"></span>
+                                <span class="cold"></span>
+                                <span class="cole"></span>
+                                <span class="colf"></span>
+                                <span class="colg"></span>
+                                <span class="colh"></span>
+                                <span class="coli"></span>
+                                <span class="colj"></span>
+                                <span class="colk"></span>
+                                <span class="coll"></span>
+                                <span class="colm"></span>
+                            </div>
+                        </div>
+                        <div class="cra_bz" style="margin-top:20px;"><span>1</span><input type="text"><a href="#">移除</a></div>
+                        <div class="cra_bz"><span>2</span><input type="text"><a href="#">移除</a></div>
+                        <div class="cra_bz"><span>3</span><input type="text"><a href="#">移除</a></div>
+                    </div>
+                    <div class="cra_con2" style="border:none;">
+                        <div class="cra_tit_name">常用备注</div>
+                        <div class="tb_div">
+                            <table class="tb_tables ta_bga" cellspacing="0" cellpadding="0">
+                                 <thead>
+                                    <tr class="tr_heard">
+                                      <td class="td_width" colspan="2" style="color:#fff; text-align:left;padding-left:20px;">温馨提示：双击添加</td>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                   <tr>
+                                       <td class="td_width">1</td>
+                                       <td>眼睛大点</td>
+                                   </tr>
+                                   <tr>
+                                       <td class="td_width">2</td>
+                                       <td>胳膊细点</td>
+                                   </tr>
+                                   <tr>
+                                       <td class="td_width">3</td>
+                                       <td>腿细点</td>
+                                   </tr>
+                                   <tr>
+                                       <td class="td_width">4</td>
+                                       <td>腰细点</td>
+                                   </tr>
+                                   <tr>
+                                       <td class="td_width">5</td>
+                                       <td>整体色调暖暖</td>
+                                   </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="car_btm">
+                    <a href="#" class="car_btn orange" style="margin-left:65px;">保存</a>
+                    <a href="#" class="car_btn gray" style="margin-left:30px;">取消</a>
+                </div>
+            </div>
+
+        <!--右--end -->
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+    $(".cra_tit_shape a").click(function(){
+        $(".cra_tit_shape a").removeClass('cz_btn3b');
+        $(this).addClass('cz_btn3b');
+    });
+    $(".cra_tit_lineH a").click(function(){
+        $(".cra_tit_lineH a").removeClass('cz_btn3b');
+        $(this).addClass('cz_btn3b');
+    });
+});
+
+</script>
+<script type="text/javascript">
+/*隔行换色*/
+	$(function(){
+		$(".ta_bg tr:even").addClass("tr_styles");
+		$(".ta_bga tr:even").addClass("tr_styles");
+		$("table>tbody>tr").click(function(){
+			$(this).addClass("tb_check").siblings().removeClass("tb_check");
+		});
+	});
+</script>
+</body>
+</html>

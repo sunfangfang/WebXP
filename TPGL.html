@@ -1,0 +1,1173 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>图片管理</title>
+    <link rel="stylesheet" type="text/css" href="css/reset_s.css">
+    <link rel="stylesheet" type="text/css" href="css/table.css"/>
+    <link rel="stylesheet" type="text/css" href="css/TPGL.css">
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="js/TPGL.js"></script>
+    <style type="text/css">
+        .pic_ifr {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        window.px = "";
+        window.py = "";
+        function dian(e,name) {//鼠标单击不放
+            px = e.pageX;//获取x坐标
+            py = e.pageY+$(name).scrollTop();//获取y坐标
+        }
+        var pxx,pyy,h,w;
+
+        function jswh(name,con){
+            var tpgl_tbH;
+            if ($(".tb_hide").is(":visible")){
+                tpgl_tbH=$(".tb_hide").height();
+            }else{
+                tpgl_tbH=0;
+            }
+            if (h < 0 && w >= 0) {
+                $(name).css({ "height": (-h) + "px", "width": w + "px", "left": px-$(con).offset().left + "px", "top": pyy-tpgl_tbH-200+"px"});
+            }
+            else if (h >= 0 && w < 0) {
+                $(name).css({ "height": h + "px", "width": (-w) + "px", "left": pxx-$(con).offset().left + "px", "top": py-tpgl_tbH-200+"px"});
+            }
+            else if (h < 0 && w < 0) {
+                $(name).css({ "height": (-h) + "px", "width": (-w) + "px","left": pxx-$(con).offset().left + "px", "top": pyy-tpgl_tbH-200 + "px"});
+            }
+            else {
+                $(name).css({ "height": h + "px", "width": w + "px","left": px-$(con).offset().left + "px", "top": py-tpgl_tbH-200 + "px"});
+            }
+        }
+
+
+        function xuan(e,id,con) {       //鼠标移动
+            if (px == "" || py == "") {
+                return;
+            }
+            pxx = e.pageX;
+            pyy = e.pageY+$(con).scrollTop();
+            h = pyy - py;
+            w = pxx - px;
+            if(px<=$(con).offset().left||px>=$(con).offset().left+$(con).width()||pxx<=$(con).offset().left||pxx>=$(con).offset().left+$(con).width()){
+                px = "";
+                py = "";
+                h = 0;
+                w = 0;
+                $(id).css({ "height": "0", "width": "0", "border": "0px" });
+                return;
+            }
+            //画出矩形选中框
+            jswh(id,con);
+            if (w < 0) {
+                w = 0 - w;
+            }
+            if (h < 0) {
+                h = 0 - h;
+            }
+            $(con).find(".cp1").removeClass("check_border");
+            for(var i=0;i<$(con).find(".cp1").length;i++){
+                var imgW=$($(con).find(".cp1")[i]).offset().left;
+                var imgH=$($(con).find(".cp1")[i]).offset().top;
+                if(imgW>$(id).offset().left&&imgW<$(id).offset().left+w&&imgH>$(id).offset().top-100&&imgH<$(id).offset().top+h||$(id).offset().left>imgW&&$(id).offset().top<imgH&&imgH<$(id).offset().top+h&&imgW+100>$(id).offset().left||imgW+100<$(id).offset().left+w&&imgW<$(id).offset().left&&imgH+100<$(id).offset().top+h&&imgH<$(id).offset().top&&imgH+100>$(id).offset().top&&imgW+100>$(id).offset().left||$(id).offset().left>imgW&&$(id).offset().top>imgH&&imgH+100>$(id).offset().top&&imgW+100>$(id).offset().left){
+                    $($(con).find(".cp1")[i]).addClass("check_border");
+                }
+            }
+        }
+        function li(id) {//鼠标点击放开进行初始化
+            px = "";
+            py = "";
+            h = 0;
+            w = 0;
+            $(id).css({ "height": "0", "width": "0", "border": "0px" });
+        }
+        $(document).mouseup(function(){
+            px = "";
+            py = "";
+            h = 0;
+            w = 0;
+            $("#container1").css({ "height": "0", "width": "0", "border": "0px" });
+            $("#container2").css({ "height": "0", "width": "0", "border": "0px" });
+        });
+    </script>
+</head>
+<body>
+
+<div class="top_nav">
+    <div class="sy">
+        <small style="background-color:#f36e5d;"></small>
+        <span>图片管理</span>
+    </div>
+</div>
+<!----top---->
+<div class="c_top clearfix">
+    <div class="c_head1">
+        <span>客户编号、姓名、手机：</span>
+        <input type="text" value="" placeholder="1880002542" class="input_m"/>
+    </div>
+    <div class="c_head2">
+        <span>查询日期：</span>
+        <select>
+            <option>拍照日</option>
+            <option>拍照日</option>
+            <option>拍照日</option>
+            <option>拍照日</option>
+            <option>拍照日</option>
+        </select>
+        <select>
+            <option>2016-2-14</option>
+            <option>2016-2-15</option>
+            <option>2016-2-16</option>
+            <option>2016-2-17</option>
+        </select>
+    </div>
+    <div class="c_head3">
+        <span>员工：</span>
+        <select>
+            <option>全部</option>
+            <option>全部</option>
+            <option>全部</option>
+        </select>
+    </div>
+    <div class="c_head4">
+        <a href="#" class="c_head4a1 tb_orange">查询</a>
+    </div>
+    <a href="#" class="c_head5">
+        <span class="c_font color_ps">收起信息</span>
+        <span class="c_bg c_bgs"></span>
+    </a>
+</div>
+
+<div class="tb_hide">
+    <iframe src="Search.html" frameborder="0" class="pic_ifr" style="height: 210px;"></iframe>
+</div>
+<!--下拉结束-->
+<!--bottom-->
+<div class="c_bottom">
+    <div class="divline"></div>
+    <div class="c_bottomtop">
+        <div class="c_bottomline">
+            <span class="c_topcur"></span>
+        </div>
+    </div>
+    <!--tab切换开始-->
+    <div class="c_bottomcon">
+        <ul class="cul_bottom clearfix">
+            <li>查看图片</li>
+            <li class="cul_bottomli">上传照片</li>
+            <li>结果分包下载</li>
+        </ul>
+        <div class="div_tab clearfix">
+            <div class="c_tab clearfix" style="display:none;">
+                <div class="c_tab1">
+                    <div class="c_tabs">
+                        <a href="#" class="c_tabsam">查看照片</a>
+                        <ul class="c_tabsul">
+                            <li class="c_tabsultop">
+                                <span>客户编号：</span>
+                                <span>1800002542</span>
+                            </li>
+                            <li class="clearfix">
+                                <div class="div_left">
+                                    <span>总账数：</span>
+                                    <span>300</span>
+                                </div>
+                                <div class="div_right">
+                                    <span>已选：</span>
+                                    <span>18</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>未选：</span>
+                                <span>18</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c_tabsg ser_01"  onmousedown="dian(event,'.ser_01')" onmousemove="xuan(event,'#container1','.ser_01')" onmouseup="li('#container1')">
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+
+                        <div id="container1" style="background-color:#000;"></div>
+                    </div>
+                </div>
+                <!--/*线定位*/-->
+                <div class="c_tab2 c_tabg">
+                    <!--<div class="c_dirline">-->
+                        <!--<span class="c_leftcur"></span>-->
+                    <!--</div>-->
+                </div>
+                <div class="c_tab3">
+                    <div class="c_tabs">
+                        <a href="#" class="c_tabsam">查看照片</a>
+                        <ul class="c_tabsul">
+                            <li class="c_tabsultop">
+                                <span>客户编号：</span>
+                                <span>1800002542</span>
+                            </li>
+                            <li class="clearfix">
+                                <div class="div_left">
+                                    <span>总账数：</span>
+                                    <span>300</span>
+                                </div>
+                                <div class="div_right">
+                                    <span>已选：</span>
+                                    <span>18</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>未选：</span>
+                                <span>18</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c_tabsg ser_02" onmousedown="dian(event,'.ser_02')" onmousemove="xuan(event,'#container2','.ser_02')" onmouseup="li('#container2')">
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div class="thum_pic">
+                            <div class="cp3">
+                                <img src="img/zhu.png">
+                                <div class="pin"><span>10</span></div>
+                                <img src="img/cai.png">
+                                <img src="img/pan.png">
+                            </div>
+                            <div class="cra_pic">
+                                <div class="cp1">
+                                    <div class="zhezhao"></div>
+                                    <div class="cp_dui"></div>
+                                    <div class="cp1a cp1a01"><img src="imgs/m2.jpg"></div>
+                                </div>
+                                <div class="cp2">1A2C363</div>
+                            </div>
+                        </div>
+                        <div id="container2" style="background-color:#000;"></div>
+                    </div>
+                </div>
+                <!--/*线定位*/-->
+                <div class="c_tab2 c_tabga">
+                    <!--<div class="c_dirline">-->
+                        <!--<span class="c_leftcur"></span>-->
+                    <!--</div>-->
+                </div>
+                <div class="c_tab4">
+                    <div class="c_tabf">
+                        <div><span>当前位置：</span><span class="span_num">1</span><span>/</span><span>11</span></div>
+                        <div class="div_tabsa"><span>选中：</span><span>42</span></div>
+                    </div>
+                    <div class="div_imgs">
+                        <img src="imgs/img_m2.jpg" alt="选片" class="img_a"/>
+                    </div>
+                </div>
+            </div>
+            <div class="c_tab clearfix" style="overflow:auto;">
+                <div class="c_tabtop clearfix">
+                    <a href="#" class="c_tabtop1 tb_green" onclick="input_s.click()">传照片</a>
+                    <input type="file" value="" id="input_s"/>
+                    <a href="#" class="c_tabtop2 tb_green" onclick="input_ms.click()">传已修照片</a>
+                    <input type="file" value="" id="input_ms"/>
+                    <a href="#" class="c_tabtop3 tb_blue" onclick="input_msa.click()">传设计</a>
+                    <input type="file" value="" id="input_msa"/>
+                    <a href="#" class="c_tabtop4 tb_blue" onclick="input_msa1.click()">传已修设计</a>
+                    <input type="file" value="" id="input_msa1"/>
+                    <label class="c_label clearfix">
+                        <input type="checkbox" value="" name="check" class="checkbox_w"/>
+                        <span class="span_w">按文件上传</span>
+                    </label>
+                </div>
+                <table class="tb_tables ta_bg upload_tb" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr class="tr_heard">
+                        <td class="td_width"></td>
+                        <td>上传类型</td>
+                        <td>进度</td>
+                        <td>消息</td>
+                        <td>客户编号</td>
+                        <td>拍照日</td>
+                        <td>服务次数</td>
+                        <td>男士姓名</td>
+                        <td>女士姓名</td>
+                        <td>宝宝昵称</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="td_width">1</td>
+                        <td>文件</td>
+                        <td>10%<span class="lodding"><img src="img/lodding.gif" alt=""></span></td>
+                        <td>无</td>
+                        <td>1800</td>
+                        <td>20160224</td>
+                        <td>女</td>
+                        <td>李</td>
+                        <td>程</td>
+                        <td>未看</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_width"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_width"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="td_width"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="c_tab clearfix c_tb3">
+                <div class="fb_left">
+                    <div class="fb_title">
+                        <div><span>可分片的消费项目</span></div>
+                    </div>
+                    <div class="fb_con">
+                        <div class="fb_contain">
+                            <table class="tb_tables ta_bg fb_tb" cellspacing="0" cellpadding="0">
+                                <thead>
+                                <tr class="tr_heard">
+                                    <td><input type="checkbox"></td>
+                                    <td>序</td>
+                                    <td>项目名称</td>
+                                    <td>服次</td>
+                                    <td>实际原片数</td>
+                                    <td>数量</td>
+                                    <td>实际原片数</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="fb_mid">
+                    <div class="mid_block">
+                        <div class="fp"></div>
+                        <div class="fb"></div>
+                    </div>
+                </div>
+                <div class="fb_right">
+                    <div class="fb_title">
+                        <div><span>客户分片进度</span></div>
+                    </div>
+                    <div class="fb_con fb_con1">
+                        <div class="fb_contain">
+                            <table class="tb_tables ta_bg fp_tb" cellspacing="0" cellpadding="0">
+                                <thead>
+                                <tr class="tr_heard">
+                                    <td>序</td>
+                                    <td>项目名称</td>
+                                    <td>服次</td>
+                                    <td>实际原片数</td>
+                                    <td>数量</td>
+                                    <td>实际原片数</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>文件</td>
+                                    <td>10%</td>
+                                    <td>无</td>
+                                    <td>20160224</td>
+                                    <td>15351</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--tab切换结束-->
+    </div>
+</div>
+<!--右击显示下拉列表-->
+<div class="tc_ul" style="display: none"><!--/*右击弹出的内容*/-->
+    <ul class="ul_lis">
+        <li class="liheight"><span class="span_qued posi_mh"></span>全部</li>
+        <li class="liheight"><span class="posi_mh"></span>已选</li>
+        <li class="liheight span_m"><span class="posi_mh"></span>入册</li>
+        <li class="liheight"><span class="posi_mh"></span>标注</li>
+        <li class="li_line"></li><!--线-->
+        <li class="liheight1"><span class="posi_mh"></span>未选</li>
+        <li class="li_line"></li><!--线-->
+        <li class="liheight1 li_xf">
+            <span class="posi_mh"></span>
+            产品
+            <span class="span_li"></span>
+            <div class="div_con">
+                <div>18寸钻石之恋相册横版</div>
+                <div>18寸钻石之恋相册横版</div>
+                <div>巨幅婚礼专用顶级绢丝海报（含照片及海报设计配专属展架）</div>
+                <div>巨幅婚礼专用顶级绢丝海报（含照片及海报设计配专属展架）</div>
+                <div>12寸水晶典礼</div>
+                <div>360 张底片全部进行简修修片处理</div>
+                <div>360 张底片全部进行简修修片处理</div>
+                <div>36寸浪漫天使</div>
+                <div>36寸浪漫天使</div>
+            </div>
+        </li>
+        <li class="li_line"></li><!--线-->
+        <li class="liheight1">
+            <span class="posi_mh"></span>
+            删除
+        </li>
+        <li class="li_line"></li><!--线-->
+        <li class="liheight1">
+            <span class="posi_mh"></span>
+            刷新
+        </li>
+    </ul>
+</div>
+<style>
+    .right_tc{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: auto;
+        background: #fff;
+        border: 1px solid #cecece;
+        border-radius: 4px;
+        box-shadow: 1px 1px 3px #c1c1c1;
+        z-index: 300;
+        display: none;
+    }
+    .right_ul{
+        width: 100%;
+        height: auto;
+    }
+    .right_ul li{
+        border-bottom: 1px solid #e4e4e4;
+        color: #161616;
+        cursor: pointer;
+        font-size: 12px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 28px;
+        line-height: 28px;
+    }
+    .right_ul li:hover{
+        background: rgba(248, 231, 222, 0.5);
+        border-radius: 4px;
+        border: 1px solid #e2e2e2;
+    }
+</style>
+
+<div class="right_tc">
+    <ul class="right_ul">
+        <li>aa</li>
+        <li>aa</li>
+        <li>aa</li>
+        <li>aa</li>
+    </ul>
+</div>
+<script>
+    $('.upload_tb>tbody>tr').mousedown(function (e) {
+        if (3 == e.which) { //鼠标右键3 中键2 鼠标左键1
+            $(".right_tc").slideDown();
+            $(document).not($(".upload_tb")).click(function () {
+                $(".right_tc").hide();
+            });
+        }
+    });
+</script>
+</body>
+</html>

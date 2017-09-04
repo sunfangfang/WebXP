@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色权限</title>
+    <link rel="stylesheet" type="text/css" href="css/reset_s.css"/>
+    <link rel="stylesheet" href="css/tc1.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/QXSD.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="js/jquery.reveal.js"></script>
+    <script src="js/QXSD.js"></script>
+</head>
+<body>
+    <div class="top_nav clearfix"><div class="sy"><small></small><span>角色权限</span></div></div>
+    <div class="clear"></div>
+    <div class="main" style="overflow: auto;">
+        <div class="main_l">
+            <div class="qx_block" style="margin-bottom: 14px">
+                <div class="qx_title">
+                    <div class="qx_left" style="width: 120px"><span>角色</span> <i class="title_cir"></i><span>增删</span></div>
+                </div>
+                <div class="qx_tb">
+                    <div class="qx_tbcon" style="height: 240px;">
+                        <table cellspacing="0" cellpadding="0">
+                            <thead>
+                            <tr>
+                                <td>序号</td>
+                                <td>角色</td>
+                                <td>备注</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>经理</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>接待</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>副主管</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>经理</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>接待</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>副主管</td>
+                                <td>负责管理，分配每个人的任务，并督促</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tb_bottom">
+                        <a href="javascript:;" class="tb_btn tb_orange" data-reveal-id="xjtc">新建</a>
+                        <a href="javascript:;" class="tb_btn tb_green">编辑</a>
+                        <a href="javascript:;" class="tb_btn tb_gray">删除</a>
+                        <div class="tb_b_zs">
+                            <span>共<label>10</label>个角色</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qx_block">
+                <div class="qx_title">
+                    <div class="qx_left"><span>角色赋予</span></div>
+                    <div class="qx_right">
+                        <div class="js_fl">
+                            <span>部门 : </span>
+                            <select>
+                                <option value="">研发部</option>
+                                <option value="">企划部</option>
+                                <option value="">技术部</option>
+                            </select>
+                        </div>
+                        <div class="js_fl">
+                            <span>职位 : </span>
+                            <select>
+                                <option value="">总监</option>
+                                <option value="">经理</option>
+                                <option value="">经理</option>
+                            </select>
+                        </div>
+                        <a href="javascript:;" class="tb_btn tb_orange" style="margin-top:0;margin-left: 25px">查询</a>
+                    </div>
+                </div>
+                <div class="qx_tb">
+                    <div class="qx_tbcon qx_tbcon01">
+                        <table cellspacing="0" cellpadding="0">
+                            <thead>
+                            <tr>
+                                <td>序号</td>
+                                <td>角色</td>
+                                <td>员工编号</td>
+                                <td>登录名称</td>
+                                <td>部门</td>
+                                <td>职位</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>主管</td>
+                                <td>2011111</td>
+                                <td>001</td>
+                                <td>研发部</td>
+                                <td>经理</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="js_sel">
+                        <span><i style="color: #ff5700;margin-right: 5px;">*</i>选择角色 :</span>
+                        <select>
+                            <option value="">主管</option>
+                            <option value="">经理</option>
+                            <option value="">接待</option>
+                            <option value="">副主管</option>
+                        </select>
+                    </div>
+                    <div class="js_lab">
+                        <a href="javascript:;" class="tb_btn tb_orange">确定工作人员角色</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_r">
+            <div class="qx_block">
+                <div class="qx_title">
+                    <div class="qx_left"><span>权限设置</span></div>
+                </div>
+                <div class="qx_tb">
+                    <div class="js_sel" style="border-top: 1px solid #f4f4f4;">
+                        <span><i style="color: #ff5700;margin-right: 5px;">*</i>选择角色 :</span>
+                        <select>
+                            <option value="">主管</option>
+                            <option value="">经理</option>
+                            <option value="">接待</option>
+                            <option value="">副主管</option>
+                        </select>
+                    </div>
+
+                    <div class="right_block">
+                        <div class="right_title">权限选择</div>
+                        <div class="qx_check">
+                            <ul class="first_ul">
+                                <li style="padding-top: 0;">
+                                    <i class="qx_img_fir qx_img1"></i>
+                                    <span class="line_x"></span>
+                                    <label class="lab_fir">
+                                        <input type="checkbox">
+                                        <span>这个可以修改</span>
+                                    </label>
+                                    <ul class="sec_ul left_line">
+                                        <li>
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li style="background-color: #fff">
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="qx_img_fir qx_img1"></i>
+                                    <span class="line_x"></span>
+                                    <label class="lab_fir">
+                                        <input type="checkbox">
+                                        <span>这个可以修改</span>
+                                    </label>
+                                    <ul class="sec_ul left_line">
+                                        <li style="background-color: #fff">
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="qx_img_fir qx_img1"></i>
+                                    <span class="line_x"></span>
+                                    <label class="lab_fir">
+                                        <input type="checkbox">
+                                        <span>这个可以修改</span>
+                                    </label>
+                                    <ul class="sec_ul left_line">
+                                        <li style="background-color: #fff">
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="qx_img_fir qx_img1"></i>
+                                    <span class="line_x"></span>
+                                    <label class="lab_fir">
+                                        <input type="checkbox">
+                                        <span>这个可以修改</span>
+                                    </label>
+                                    <ul class="sec_ul left_line">
+                                        <li style="background-color: #fff">
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <i class="qx_img_fir qx_img1"></i>
+                                    <span class="line_x"></span>
+                                    <label class="lab_fir">
+                                        <input type="checkbox">
+                                        <span>这个可以修改</span>
+                                    </label>
+                                    <ul class="sec_ul left_line">
+                                        <li style="background-color: #fff">
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li style="background-color: #fff">
+                                    <i class="qx_img_fir qx_img1"></i>
+                                    <span class="line_x"></span>
+                                    <label class="lab_fir">
+                                        <input type="checkbox">
+                                        <span>这个可以修改</span>
+                                    </label>
+                                    <ul class="sec_ul">
+                                        <li style="background-color: #fff">
+                                            <i class="qx_img_sec qx_img1"></i>
+                                            <span class="line_x"></span>
+                                            <label class="lab_fir">
+                                                <input type="checkbox">
+                                                <span>这个可以修改</span>
+                                            </label>
+                                            <ul class="third_ul">
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <i class="qx_img2"></i>
+                                                    <span class="line_x"></span>
+                                                    <label class="lab_fir">
+                                                        <input type="checkbox">
+                                                        <span>这个可以修改</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tb_bottom">
+                        <a href="javascript:;" class="tb_btn tb_green">编辑</a>
+                        <a href="javascript:;" class="tb_btn tb_gray">取消</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--新建类弹窗-->
+    <div class="box" id="xjtc" style="width:450px;">
+        <div class="box_tit">
+            <div class="box_t_name">角色编辑</div>
+            <a href="#" class="box_close close-reveal-modal"></a>
+        </div>
+        <div class="box_con">
+            <div class="box_row">
+                <span><label style="color: red;">*</label>角色名称</span>
+                <input type="text" class="new_input" style="margin-left: 15px">
+            </div>
+            <div class="box_row">
+                <span><label style="color: red;">*</label>角色备注</span>
+                <input type="text" class="new_input" style="margin-left: 15px">
+            </div>
+        </div>
+        <div class="gbox_btm">
+            <a href="#" class="gbox_btn_clear close-reveal-modal">取消</a>
+            <button class="gbox_btn_save  tb_blue close-reveal-modal">确定</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function(){
+        $("tbody tr:even").addClass("tr_styles");
+        $("table>tbody>tr").click(function(){
+            $(this).addClass("tr_style").siblings().removeClass("tr_style");
+        });
+    });
+</script>
+</html>

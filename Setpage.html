@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <link rel="stylesheet" type="text/css" href="css/reset_s.css"/>
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/XP-SJ.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script>
+        $(window).load(function(){
+            setConMaxHeight();
+        });
+        $(window).resize(function() {
+            setConMaxHeight();
+        });
+        function setConMaxHeight() {
+            var fg=$(window).height()-60;
+            $(".main").css({"height": fg});
+        }
+    </script>
+</head>
+<body class="setpage">
+<div class="top_nav clearfix"><div class="sy sz"><small></small><span>设置</span></div><a href="javascript:;" class="tb_btn tb_blue">保存</a></div>
+<div class="clear"></div>
+<div class="main">
+    <div class="kj_block">
+        <div class="kj_title"><span>系统配置</span><span class="sz_tip">注：所有项不能为空！</span></div>
+        <div class="kj_con">
+            <div class="kj_contain">
+                <div class="sz_row">
+                    <div class="row_l"><span>狗号：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>店名：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>客户类型：</span></div>
+                    <div class="row_r">
+                        <select class="row_input">
+                            <option value="">婚纱</option>
+                            <option value="">儿童</option>
+                            <option value=""></option>
+                        </select>
+                        <span class="sz_tip">(狗号只能数字提示狗号只能数字提示狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>ERP地址：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>中档图片分辨率：</span></div>
+                    <div class="row_r">
+                        <select class="row_input">
+                            <option value="">720</option>
+                            <option value="">360</option>
+                            <option value="">180</option>
+                        </select>
+                        <span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>是否默认做光盘：</span></div>
+                    <div class="row_r"><input type="checkbox" style="float: left;margin-top: 9px"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>空间不足，提示剩余空间大小（单位G）：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>选片操作记录库地址：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kj_block">
+        <div class="kj_title"><span>ERP数据库配置</span><span class="sz_tip">注：所有项不能为空！</span></div>
+        <div class="kj_con">
+            <div class="kj_contain">
+                <div class="sz_row">
+                    <div class="row_l"><span>数据库名：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>数据库登录名：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>数据库密码：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kj_block">
+        <div class="kj_title"><span>ERP操作记录库配置</span><span class="sz_tip">注：所有项不能为空！</span></div>
+        <div class="kj_con">
+            <div class="kj_contain">
+                <div class="sz_row">
+                    <div class="row_l"><span>数据库名：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>数据库登录名：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+                <div class="sz_row">
+                    <div class="row_l"><span>数据库密码：</span></div>
+                    <div class="row_r"><input type="text" class="row_input"><span class="sz_tip">(狗号只能数字提示)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
